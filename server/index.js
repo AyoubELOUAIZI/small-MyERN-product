@@ -4,6 +4,24 @@ const app = express();
 // Middleware
 app.use(express.json());
 
+const mysql = require('mysql2');
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'Products'
+});
+
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database: ' + err.stack);
+        return;
+    }
+    console.log('Connected to database as id ' + connection.threadId);
+});
+
+
 // Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/products', require('./routes/products'));

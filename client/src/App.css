@@ -6,3 +6,49 @@ body{
 .App {
   text-align: center;
 }
+.Appchild{
+  display: flex;
+  font-size: 25px;
+}
+
+.inputs{
+  /* background-color:blue; */
+  width: 30%;
+}
+.oneInput{
+  margin-top:10px;
+  padding: 10px;
+  width: 80%;
+  margin-left:10%;
+  text-align: left;
+  
+ 
+  
+ 
+}
+input{
+  font-size: 26px;
+  border-radius: 10px;
+  padding: 5px;
+
+}
+label{
+  margin-left: 12px;
+}
+button{
+  background-color: greenyellow;
+  font-size: 24px;
+  border-radius: 10px;
+  border: white 3px solid;
+  margin: 5px;
+  margin-top: 20px;
+}
+button:hover{
+  cursor: pointer;
+}
+
+/* ----------------------------------------------- */
+.information{
+  background-color:blueviolet;
+    width: 80%;
+}
