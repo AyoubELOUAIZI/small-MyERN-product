@@ -1,19 +1,4 @@
-const mysql = require('mysql2');
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'Products'
-});
-
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to database: ' + err.stack);
-        return;
-    }
-    console.log('Connected to database as id ' + connection.threadId);
-});
+const connection = require("../config/connection");
 
 
 const addProduct = (req, res) => {
@@ -33,7 +18,7 @@ const addProduct = (req, res) => {
                 console.log(err);
             } else {
                 // Send a response to the client
-                res.send("Values Inserted \n" + result);
+                res.send("Values Inserted result is: \n" + result);
             }
         }
     );
@@ -54,7 +39,7 @@ const PullAllProduct= (req, res) => {
         } else {
             // Send the query result as a response to the client
             res.send(result);
-            console.log(result);
+           
         }
     });
 };
